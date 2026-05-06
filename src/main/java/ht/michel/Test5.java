@@ -83,10 +83,14 @@ public class Test5 {
                 .build())
                 .build();
 
-        // Test 1
+        // Le LLM va utiliser l'information du fichier infos.txt pour répondre à la question.
         String question = "Comment s'appelle le chat de Pierre ?";
         System.out.println("Question : " + question);
-        System.out.println("Réponse  : " + assistant.chat(question));
+
+        // L'assistant recherche dans la base vectorielle les informations les plus pertinentes
+        // pour répondre à la question, en comparant les embeddings de la base et celui de la question.
+        // Ces informations sont ajoutées à la question et le tout est envoyé au LLM.
+        System.out.println("Réponse  : " + assistant.chat(question)); // // Affiche la réponse du LLM.
 
         System.out.println();
 
